@@ -1,30 +1,8 @@
-var button = document.getElementById("create");
-var input = document.getElementById("input");
-var list = document.getElementById("list");
-
-var todolist = JSON.parse(localStorage.getItem("listItems")) || [];
-render();
-
-function addData () {
-  if (input.value !="") {
-    todolist.push(input.value);
-    input.value = "";
-    render();
-  }
+function charToHTML(c, i){
+  return `<span class="title" style="animation-delay: ${i*0.5}s">${c}</span>`;
 }
 
-function delData (i) {
-  todolist.splice(i, 1);
-  
-  render();
-}
+var title = document.getElementById("word");
+var charArray = title.innerHTML.split("")
 
-function render() {
-  localStorage.setItem("listItems", JSON.stringify(todolist));
-  var content = "";
-  for(var i = 0; i < todolist.length; i++) {
-    content = content + `<div><button class='delete' onclick='delData(${i})'>刪除</button>` + todolist[i] + "</div>";
-  }
-  
-  list.innerHTML = content;
-}
+title.innerHTML = charArray.map(charToHTML).join("")

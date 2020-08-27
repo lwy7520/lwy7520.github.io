@@ -1,10 +1,39 @@
-.container {
-  padding-top:32px;
-  display:flex;
-  flex-direction: column;
-  align-items: center;
+body {
+  margin:0px;
 }
 
-.delete {
-  margin: 8px;
+.animationtitle {
+  display:flex;
+  padding-top:80px;
+  padding-left:20px;
+  height: 100vh;
+  background-image:  url('https://upload.cc/i1/2020/08/27/6pqmBT.jpg');
+  background-size: cover;
+  background-position: center;
+  color: gold;
+  font-size: 48px
+}
+
+.title {
+  animation-name: move;
+  animation-duration:2s;
+  transform: translateX(-1000px);
+  animation-fill-mode: forwards;
+}
+
+@keyframes move {
+  0% {
+    transform: translateX(-1000px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+.information{
+  display:flex;
+  align-items: center;
+  justify-content:center;
+}
+.i2{
+  margin:12px;
 }
